@@ -129,7 +129,7 @@ const Home = () => {
           />
           <Link to="/api/books/create">
             <MdOutlineAddBox
-              className="text-sky-800 text-4xl ml-4 hover:text-slate-300"
+              className="text-green-400 text-4xl ml-4 hover:text-slate-300"
               title="Añadir nuevo libro"
             />
           </Link>
