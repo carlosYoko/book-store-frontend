@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BooksTable from '../home/BooksTable';
 import BooksCards from '../home/BooksCards';
+import { useSEO } from '../hooks/useSEO';
 
 import { enqueueSnackbar } from 'notistack';
 
@@ -24,6 +25,11 @@ const Home = () => {
   const [showType, setShowType] = useState(
     localStorage.getItem('viewType') || 'table'
   );
+
+  useSEO({
+    title: `[${books.length}] Book Store`,
+    description: 'Añadir y eliminar libros de una lista (CRUD)',
+  });
 
   let styleIconsTypeFormat = 'text-slate-300 text-4xl cursor-pointer';
 
