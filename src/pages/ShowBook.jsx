@@ -5,11 +5,17 @@ import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
 import { backendURL } from '../config/axiosConfig';
 import { enqueueSnackbar } from 'notistack';
+import { useSEO } from '../hooks/useSEO';
 
 const ShowBook = () => {
   const [book, setBook] = useState({});
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
+
+  useSEO({
+    title: `Book Store - ${book.title}`,
+    description: `Informacion del libro ${book.title} - Book Store`,
+  });
 
   useEffect(() => {
     setLoading(true);
